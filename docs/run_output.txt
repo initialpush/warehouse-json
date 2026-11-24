@@ -1,0 +1,22 @@
+2026-11-24 05:10:54,616 [INFO] Приход товаров
+2026-11-24 05:10:54,616 [DEBUG] CALL Receiver.process args=(...) kwargs={}
+2026-11-24 05:10:54,616 [DEBUG] RETURN Receiver.process -> 3
+2026-11-24 05:10:54,616 [INFO] Списание товаров
+2026-11-24 05:10:54,616 [DEBUG] CALL Receiver.process args=(...) kwargs={}
+2026-11-24 05:10:54,616 [DEBUG] RETURN Receiver.process -> 1
+2026-11-24 05:10:54,616 [DEBUG] CALL Receiver.process args=(...) kwargs={}
+2026-11-24 05:10:54,616 [ERROR] RAISE Receiver.process: InsufficientStockError: Товара A-300: на складе 4, запрошено 99
+2026-11-24 05:10:54,616 [WARNING] Списание больше остатка: InsufficientStockError: Товара A-300: на складе 4, запрошено 99
+2026-11-24 05:10:54,616 [DEBUG] CALL Receiver.process args=(...) kwargs={}
+2026-11-24 05:10:54,616 [ERROR] RAISE Receiver.process: ProductNotFoundError: Товар X-999 не найден
+2026-11-24 05:10:54,616 [WARNING] Неизвестный товар: ProductNotFoundError: Товар X-999 не найден
+2026-11-24 05:10:54,616 [DEBUG] CALL Receiver.process args=('{not json',) kwargs={}
+2026-11-24 05:10:54,616 [ERROR] RAISE Receiver.process: ValidationError: Некорректный JSON: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
+2026-11-24 05:10:54,616 [WARNING] Битый JSON: ValidationError: Некорректный JSON: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
+
+Артикул | Название | Остаток | Цена
+A-100 | Молоко 1л | 15 | 85.5
+A-200 | Хлеб | 10 | 45
+A-300 | Сыр | 4 | 420
+Общая стоимость остатков: 3412.5
+Низкий запас: ['A-300']
