@@ -1,0 +1,5 @@
+{
+  "low_stock_threshold": 5,
+  "log_file": "app.log",
+  "debug": true
+}
